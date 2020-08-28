@@ -15,7 +15,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    animationController = AnimationController();
+    animationController = AnimationController(
+      duration: Duration(seconds: 1),
+      
+    );
   }
   @override
   Widget build(BuildContext context) {
