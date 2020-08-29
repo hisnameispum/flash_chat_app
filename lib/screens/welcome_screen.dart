@@ -8,7 +8,7 @@ class WelcomeScreen extends StatefulWidget {
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> {
+class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProviderStateMixin {
   AnimationController animationController;
 
   @override
@@ -17,6 +17,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     super.initState();
     animationController = AnimationController(
       duration: Duration(seconds: 1),
+      vsync: this,
       
     );
   }
