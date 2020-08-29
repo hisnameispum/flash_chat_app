@@ -20,11 +20,20 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
       vsync: this,
       
     );
+
+    animationController.addListener(() {
+      setState(() {
+        
+      });
+      print(animationController.value);
+    });
+
+    animationController.forward();
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.blue.withOpacity(animationController.value),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
