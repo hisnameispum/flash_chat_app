@@ -22,15 +22,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
       
     );
     animation = CurvedAnimation(parent: animationController, curve: Curves.decelerate);
+    animationController.forward();
 
     animationController.addListener(() {
-      setState(() {
-
-      });
-      print(animationController.value);
+      setState(() {});
+      print(animation.value);
     });
 
-    animationController.forward();
   }
   @override
   Widget build(BuildContext context) {
@@ -48,7 +46,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                   tag: 'logo',
                   child: Container(
                     child: Image.asset('images/logo.png'),
-                    height: 60.0,
+                    height: animation.value * 100,
                   ),
                 ),
                 Text(
